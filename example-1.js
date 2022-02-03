@@ -18,31 +18,7 @@ cleanConsole(1, companies);
 
 /* let fredy1 = companies.map((a) => ({...a})); */
 /* const dato = Object.assign(companies, ...companies) */
-/* 
-const dato = [];
 
-for (var i = 0; i < companies.length; i++) {
-   dato.push(companies[i]);
- } */
- 
- /* const dato = dato5.splice() */
-/*  const dato = Object.assign({},dato5) */
-
-
-/* function deepClone(object) {
-    var clone = {};
-    for (var key in object) {
-    var value = object[key];
-    if (typeof(value) != 'object' ) {
-    clone[key]= value;
-    }else{
-    clone[key] = deepClone(value);
-    }
-    }
-    return clone
-    }
-
-const dato = deepClone(companies) */
 
 
 
@@ -64,8 +40,7 @@ function capitalizarPrimeraLetra(str) {
 //Solucionar
 empresa.forEach(element => {  
    
-  
-
+ 
   element.name == undefined ?
   element.name = "" :
   element.name = capitalizarPrimeraLetra(element.name);
@@ -86,9 +61,7 @@ empresa.forEach(element => {
 
 
   });
-  tab.push({
-    fredy: "element.name"
-  });
+ 
 
   
  //Ordenar users por firstName
