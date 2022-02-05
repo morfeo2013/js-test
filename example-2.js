@@ -23,6 +23,7 @@ cleanConsole(2, companies);
 // "users" whose attribute value "car" is equal to the parameter of the
 // "hasCar" function and the "usersLength" attribute must indicate the number of
 // "users" corresponding to the "hasCar" parameter
+<<<<<<< Updated upstream
 let empresa =JSON.parse(JSON.stringify(companies))
 let empresaEnsayo=[]
 
@@ -42,23 +43,90 @@ function NuevaCompañia(empresaCopia) {
     return Math.floor(min + Math.random() * (max - min));
   }
 
+=======
+let empresa = JSON.parse(JSON.stringify(companies))
+let empresaEnsayo = []
+let booleanoEnsayo = []
+let usersBase = []
+let contador = 0
+function NuevaCompañia(empresaCopia, bool, usuarios) {
+
+
+
+  return {
+    name: empresaCopia.name,
+    users: usuarios,
+    isOpen: empresaCopia.isOpen,
+    usersLength: usuarios.length,
+    id: empresaCopia.id,
+    hasCar: bool,
+  };
+
+
+
+}
+
+function createUser(usuarioFiltro) {
+
+
+  return {
+    firstName: usuarioFiltro.firstName,
+    lastName: usuarioFiltro.lastName,
+    age: usuarioFiltro.age,
+    car: usuarioFiltro.car,
+    id: usuarioFiltro.id,
+  }
+
+
+}
+>>>>>>> Stashed changes
 
   for (let index = 0; index < empresa.length; index++) {
 
+function crearBooleano(min, max) {
+  return Math.floor(min + Math.random() * (max - min));
+}
 
       empresaEnsayo= NuevaCompañia(empresa[index])
       empresa[index]=empresaEnsayo
   }
  
 
+<<<<<<< Updated upstream
   
+=======
+for (let index = 0; index < empresa.length; index++) {
+  let bool = !!crearBooleano(0, 2)
+>>>>>>> Stashed changes
 
 
 
 
+<<<<<<< Updated upstream
 
   
   
 
 
 console.log("---- SOLUTION EXAMPLE 2 --- ",  empresa);
+=======
+  for (let index2 = 0; index2 < empresa[index].usersLength; index2++) {
+
+    if (bool == empresa[index].users[index2].car) {
+      booleanoEnsayo[contador] = createUser(empresa[index].users[index2])
+      contador = contador + 1
+    }
+  }
+      contador = 0
+
+  empresaEnsayo = NuevaCompañia(empresa[index], bool, booleanoEnsayo)
+  booleanoEnsayo = []
+  empresa[index] = empresaEnsayo
+
+}
+
+
+
+
+console.log("---- SOLUTION EXAMPLE 2 --- ", empresa);
+>>>>>>> Stashed changes

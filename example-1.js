@@ -1,4 +1,4 @@
-import { createAll, cleanConsole} from "./data";
+import { createAll, cleanConsole } from "./data";
 
 const companies = createAll();
 
@@ -22,49 +22,49 @@ cleanConsole(1, companies);
 
 
 
- 
-const tab = [];
-const empresa =JSON.parse(JSON.stringify(companies))
+
+
+const empresa = JSON.parse(JSON.stringify(companies))
 
 //Ordenar empresas de mayor cantidad de usuarios a menor
-empresa.sort( (a, b)=>{
+empresa.sort((a, b) => {
   return (b.usersLength - a.usersLength)
 })
 
 
 //Primera letra en mayuscula
-function capitalizarPrimeraLetra(str) {
+export function capitalizarPrimeraLetra(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
 //Solucionar
-empresa.forEach(element => {  
-   
- 
-  element.name == undefined ?
-  element.name = "" :
-  element.name = capitalizarPrimeraLetra(element.name);
-  
+empresa.forEach(element => {
 
-  element.users.forEach(usuario => { 
-    
+
+  element.name == undefined ?
+    element.name = "" :
+    element.name = capitalizarPrimeraLetra(element.name);
+
+
+  element.users.forEach(usuario => {
+
     usuario.firstName == undefined ?
-    usuario.firstName = '' :
-    usuario.firstName = capitalizarPrimeraLetra(usuario.firstName) ;
+      usuario.firstName = '' :
+      usuario.firstName = capitalizarPrimeraLetra(usuario.firstName);
 
     usuario.lastName == undefined ?
-    usuario.lastName = '' :
-    usuario.lastName = capitalizarPrimeraLetra(usuario.lastName);
+      usuario.lastName = '' :
+      usuario.lastName = capitalizarPrimeraLetra(usuario.lastName);
 
 
-   
+
 
 
   });
- 
 
-  
- //Ordenar users por firstName
+
+
+  //Ordenar users por firstName
   element.users.sort(function (a, b) {
 
     if (a.firstName > b.firstName) {
@@ -73,21 +73,18 @@ empresa.forEach(element => {
     if (a.firstName < b.firstName) {
       return -1;
     }
-    
-    return 0;    
+
+    return 0;
   });
 
 });
 
 
- 
 
+export function crearbase() {
 
+  return empresa;
+}
 
-/* empresa.sort(function(a, b){
-  
-  return (b.users.firstName - a.users.firstName)
-
-}); */
-  console.log("----SOLUTION EXAMPLE 12 --- ",empresa);
+console.log("----SOLUTION EXAMPLE 12 --- ", empresa);
 
