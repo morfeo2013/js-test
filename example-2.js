@@ -23,7 +23,7 @@ cleanConsole(2, companies);
 // "users" whose attribute value "car" is equal to the parameter of the
 // "hasCar" function and the "usersLength" attribute must indicate the number of
 // "users" corresponding to the "hasCar" parameter
-<<<<<<< Updated upstream
+
 let empresa =JSON.parse(JSON.stringify(companies))
 let empresaEnsayo=[]
 
@@ -43,9 +43,9 @@ function NuevaCompañia(empresaCopia) {
     return Math.floor(min + Math.random() * (max - min));
   }
 
-=======
-let empresa = JSON.parse(JSON.stringify(companies))
-let empresaEnsayo = []
+
+
+
 let booleanoEnsayo = []
 let usersBase = []
 let contador = 0
@@ -79,7 +79,6 @@ function createUser(usuarioFiltro) {
 
 
 }
->>>>>>> Stashed changes
 
   for (let index = 0; index < empresa.length; index++) {
 
@@ -92,24 +91,13 @@ function crearBooleano(min, max) {
   }
  
 
-<<<<<<< Updated upstream
-  
-=======
-for (let index = 0; index < empresa.length; index++) {
-  let bool = !!crearBooleano(0, 2)
->>>>>>> Stashed changes
-
-
-
-
-<<<<<<< Updated upstream
 
   
-  
 
 
-console.log("---- SOLUTION EXAMPLE 2 --- ",  empresa);
-=======
+
+
+
   for (let index2 = 0; index2 < empresa[index].usersLength; index2++) {
 
     if (bool == empresa[index].users[index2].car) {
@@ -129,4 +117,3 @@ console.log("---- SOLUTION EXAMPLE 2 --- ",  empresa);
 
 
 console.log("---- SOLUTION EXAMPLE 2 --- ", empresa);
->>>>>>> Stashed changes
