@@ -33,12 +33,12 @@ let resp2=Boolean
 let resp3=Boolean
 
 //Primera letra en mayuscula
-function capitalizarPrimeraLetra(str) {
+function cambiarPrimeraLetra(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-
-function primeraCapital(word) {
+//Verificar y comparar primera letra
+function verificarLetraMayor(word) {
   return word.charAt(0) === word.charAt(0).toUpperCase()
 }
 
@@ -48,14 +48,14 @@ empresa.forEach(element => {
 
   element.name == undefined ?
     element.name = "" :
-    element.name = capitalizarPrimeraLetra(element.name);
+    element.name = cambiarPrimeraLetra(element.name);
 
 
   element.users.forEach(usuario => {
 
     usuario.firstName == undefined ?
       usuario.firstName = '' :
-      usuario.firstName = capitalizarPrimeraLetra(usuario.firstName);
+      usuario.firstName = cambiarPrimeraLetra(usuario.firstName);
 
     usuario.lastName == undefined ?
       usuario.lastName = '' :
@@ -79,7 +79,7 @@ empresa.forEach(element => {
 
 empresa.forEach(element2 => {
 
- resp1 = primeraCapital(element2.name)
+ resp1 = verificarLetraMayor(element2.name)
  
 
  resp1 == false ?
@@ -88,13 +88,13 @@ empresa.forEach(element2 => {
 
 
   element2.users.forEach(usuario2 => {
-    resp2 = primeraCapital(usuario2.firstName)
+    resp2 = verificarLetraMayor(usuario2.firstName)
     resp2 == false ?
     booleano2 = "No son todas Mayusculas en el firtsName" :
    false
 
 
-   resp3 = primeraCapital(usuario2.lastName)
+   resp3 = verificarLetraMayor(usuario2.lastName)
    resp3 == false ?
    booleano3 = "No son todas Mayusculas en el lastName" :
   false

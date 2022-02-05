@@ -23,8 +23,7 @@ cleanConsole(2, companies);
 
 let empresa = JSON.parse(JSON.stringify(companies))
 let empresaEnsayo = []
-let booleanoEnsayo = []
-let usersBase = []
+let usuarioEnsayo = []
 let contador = 0
 
 
@@ -86,14 +85,14 @@ for (let index = 0; index < empresa.length; index++) {
   for (let index2 = 0; index2 < empresa[index].usersLength; index2++) {
 
     if (bool == empresa[index].users[index2].car) {
-      booleanoEnsayo[contador] = createUser(empresa[index].users[index2])
+      usuarioEnsayo[contador] = createUser(empresa[index].users[index2])
       contador = contador + 1
     }
   }
       contador = 0
 
-  empresaEnsayo = NuevaCompañia(empresa[index], bool, booleanoEnsayo)
-  booleanoEnsayo = []
+  empresaEnsayo = NuevaCompañia(empresa[index], bool, usuarioEnsayo)
+  usuarioEnsayo = []
   empresa[index] = empresaEnsayo
 
 }
