@@ -57,7 +57,7 @@ for (let index = 0; index < empresa.length; index++) {
   
   
         usuarioEnsayo[contador] = createUser(empresa[index].users[index2],empresa[index].name)
-        totalUsuarios[contTotal]= createUser(empresa[index].users[index2],empresa[index].name)
+      totalUsuarios[contTotal]= createUser(empresa[index].users[index2],empresa[index].name)
         contador = contador + 1
         contTotal=contTotal+1
 
@@ -72,4 +72,7 @@ for (let index = 0; index < empresa.length; index++) {
   totalUsuarios.sort((a, b) => {
     return (b.age - a.age)
   })
+
+  
+ 
   console.log("---- SOLUTION EXAMPLE 4 --- ", totalUsuarios);
