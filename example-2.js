@@ -72,16 +72,6 @@ for (let index = 0; index < empresa.length; index++) {
 
 
 
-
-
-
-
-
-
-
-
-
-
   for (let index2 = 0; index2 < empresa[index].usersLength; index2++) {
 
     if (bool == empresa[index].users[index2].car) {
