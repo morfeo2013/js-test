@@ -4,7 +4,6 @@ const companies = createAll();
 
 cleanConsole(6, companies);
 
-console.log("---- SOLUTION EXAMPLE 6 --- ",companies);
 
 // -----------------------------------------------------------------------------
 // INSTRUCCIONES EN ESPAÑOL
@@ -29,3 +28,122 @@ console.log("---- SOLUTION EXAMPLE 6 --- ",companies);
 // };
 
 // console.log(example);
+
+
+let empresa = JSON.parse(JSON.stringify(companies))
+let empresaEnsayo = []
+let usuarioEnsayo = []
+let contador = 0
+
+
+
+
+export function capitalizarPrimeraLetra(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+//Solucionar
+empresa.forEach(element => {
+
+
+  element.name == undefined ?
+    element.name = "" :
+    element.name = capitalizarPrimeraLetra(element.name);
+
+
+  element.users.forEach(usuario => {
+
+    usuario.firstName == undefined ?
+      usuario.firstName = '' :
+      usuario.firstName = capitalizarPrimeraLetra(usuario.firstName);
+
+    usuario.lastName == undefined ?
+      usuario.lastName = '' :
+      usuario.lastName = capitalizarPrimeraLetra(usuario.lastName);
+
+
+
+
+
+  });
+
+
+
+  //Ordenar users por firstName
+  element.users.sort(function (a, b) {
+
+    if (a.firstName > b.firstName) {
+      return 1;
+    }
+    if (a.firstName < b.firstName) {
+      return -1;
+    }
+
+    return 0;
+  });
+
+});
+
+
+
+
+
+
+function NuevaCompañia(empresaCopia,  usuarios) {
+
+
+
+  return {
+    name: empresaCopia.name,
+    users: usuarios,
+    isOpen: empresaCopia.isOpen,
+    usersLength: usuarios.length,
+    id: empresaCopia.id,
+   
+  };
+
+
+
+}
+
+function createUser(usuarioFiltro) {
+  
+  return {
+    firstName: usuarioFiltro.firstName,
+    lastName: usuarioFiltro.lastName,
+   
+    car: usuarioFiltro.car,
+   
+  }
+
+
+}
+
+
+ 
+
+
+
+
+for (let index = 0; index < empresa.length; index++) {
+
+
+  for (let index2 = 0; index2 < empresa[index].usersLength; index2++) {
+
+
+      usuarioEnsayo[contador] = createUser(empresa[index].users[index2])
+      contador = contador + 1
+    
+  }
+      contador = 0
+
+  empresaEnsayo = NuevaCompañia(empresa[index], usuarioEnsayo)
+  usuarioEnsayo = []
+  empresa[index] = empresaEnsayo
+
+}
+
+
+
+
+console.log("---- SOLUTION EXAMPLE 6 --- ", empresa);

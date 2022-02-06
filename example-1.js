@@ -81,10 +81,7 @@ empresa.forEach(element => {
 
 
 
-export function crearbase() {
 
-  return empresa;
-}
 
 console.log("----SOLUTION EXAMPLE 12 --- ", empresa);
 

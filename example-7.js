@@ -3,11 +3,132 @@ const companies = createAll();
 
 cleanConsole(7, companies);
 
-console.log("---- SOLUTION EXAMPLE 7 part 1 --- ", companies);
+let resPrimera
+let empresa = JSON.parse(JSON.stringify(companies))
 
-console.log("---- SOLUTION EXAMPLE 7 part 2 --- ", companies);
+let part2 = []
+let part3 = []
+let empresa2 = []
+let usuarioEnsayo = []
+let totalUsuarios = []
+let contador = 0
+let contTotal = 0
 
-console.log("---- SOLUTION EXAMPLE 7 part 3 --- ", companies);
+
+
+function NuevaCompañia(empresaCopia) {
+
+
+    return {
+        name: empresaCopia.name,
+        users: empresaCopia.users,
+        isOpen: empresaCopia.isOpen,
+        usersLength: empresaCopia.users.length,
+        id: empresaCopia.id,
+
+    };
+
+
+
+
+
+
+}
+
+function createUser(usuarioFiltro) {
+
+
+    return {
+        firstName: usuarioFiltro.firstName,
+        lastName: usuarioFiltro.lastName,
+        age: usuarioFiltro.age,
+        car: usuarioFiltro.car,
+        id: usuarioFiltro.id,
+    }
+
+
+}
+
+
+
+
+
+
+
+
+// Parte 1: Crear una función tomando como parámetro un "id" de "company" y
+// devolviendo el nombre de esta "company".
+ObtenerCompañia(2)
+
+function ObtenerCompañia(id) {
+
+    empresa.forEach(element => {
+
+        if (element.id == id) {
+            resPrimera = element.name
+
+        }
+
+    })
+
+}
+
+// Parte 2: Crear una función tomando como parámetro un "id" de "company" y
+// quitando la "company" de la lista.
+quitarCompañia(2)
+function quitarCompañia(id2) {
+    let cont = 0
+    for (let indexp2 = 0; indexp2 < empresa.length; indexp2++) {
+
+
+        if (empresa[indexp2].id !== id2) {
+            part2 = NuevaCompañia(empresa[indexp2])
+            empresa2[cont] = part2
+            cont = cont + 1
+        }
+
+
+    }
+
+
+}
+
+
+
+
+
+// Parte 3: Crear una función tomando como parámetro un "id" de "company" y
+// permitiendo hacer un PATCH/PUT (como con una llamada HTTP) en todos los
+// atributos de esta "company" excepto en el atributo "users".
+
+llamarCompañia(0)
+function llamarCompañia(id3) {
+
+    for (let indexp3 = 0; indexp3 < empresa.length; indexp3++) {
+
+
+        if (empresa.id === id3)
+            part3 = NuevaCompañia(empresa[indexp2])
+
+
+    }
+
+
+
+
+
+}
+
+
+
+
+
+
+console.log("---- SOLUTION EXAMPLE 7 part 1 --- ", resPrimera);
+
+console.log("---- SOLUTION EXAMPLE 7 part 2 --- ", empresa2);
+
+console.log("---- SOLUTION EXAMPLE 7 part 3 --- ", part3);
 
 console.log("---- SOLUTION EXAMPLE 7 part 4 --- ", companies);
 
@@ -23,15 +144,10 @@ console.log("---- SOLUTION EXAMPLE 7 part 9 --- ", companies);
 // -----------------------------------------------------------------------------
 // INSTRUCCIONES EN ESPAÑOL
 
-// Parte 1: Crear una función tomando como parámetro un "id" de "company" y
-// devolviendo el nombre de esta "company".
 
-// Parte 2: Crear una función tomando como parámetro un "id" de "company" y
-// quitando la "company" de la lista.
 
-// Parte 3: Crear una función tomando como parámetro un "id" de "company" y
-// permitiendo hacer un PATCH/PUT (como con una llamada HTTP) en todos los
-// atributos de esta "company" excepto en el atributo "users".
+
+
 
 // Parte 4: Crear una función tomando como parámetro un "id" de "company" y un
 // nuevo "user" cuyo el apelido es "Delgado", el nombre "Juan", de 35 años y
@@ -99,3 +215,5 @@ console.log("---- SOLUTION EXAMPLE 7 part 9 --- ", companies);
 // an "id" of "user". The function must allow the user to be transferred as a parameter
 // from the 1st "company" to the 2nd "company". The "usersLength" attribute of each
 // "company" must be updated
+
+
