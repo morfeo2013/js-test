@@ -13,12 +13,16 @@ let part44 = []
 let part5 = []
 let part6 = []
 let part66 = []
+let part444 = []
 let empresa2 = []
 let usuarioEnsayo4 = []
 let usuarioEnsayo6 = []
 let part9 = []
+let part10 = []
 let part99 = []
 let usuarioEnsayo9 = []
+let usuarioEnsayo10 = []
+
 
 
 
@@ -366,13 +370,13 @@ function eliminarUsuarioCompañiaz(id6,id66) {
 
 let ax=0 //id compañia
 let bx=0 //id Users
-let cx=0 //id compañia2
-eliminarUsuarioCompañia9(ax,bx)
+let cx=1 //id compañia2
+eliminarAgregarUsuarioCompañia9(ax,bx,cx)
 
 
 
 
-function eliminarUsuarioCompañia9(id9,id99) {
+function eliminarAgregarUsuarioCompañia9(id9,id99,idcom99) {
 
     for (let index9 = 0; index9 < empresa.length; index9++) {
         let cont = 0
@@ -388,8 +392,8 @@ function eliminarUsuarioCompañia9(id9,id99) {
                 usuarioEnsayo9[cont] = createUser(empresa[index9].users[index99],0)
                 cont = cont + 1
              }
-    
-             
+  
+            
 
         }
        
@@ -403,9 +407,50 @@ function eliminarUsuarioCompañia9(id9,id99) {
 
     }
 
+    for (let index10 = 0; index10 <  part99.length; index10++) {
+       
+
+
+
+        for (let index444 = 0; index444 <  part99[index10].usersLength; index444++) {
+
+
+            
+
+            
+    
+             usuarioEnsayo10[index444] = createUser( part99[index10].users[index444],0)
+
+             if (  part99[index10].id===idcom99&& index444== part99[index10].usersLength-1) {
+                usuarioEnsayo10[ part99[idcom99].usersLength]= agregarUsuario( part99[id9].usersLength)
+                
+             }
+        }
+       
+        
+        part10 = NuevaCompañia4( part99[index10], usuarioEnsayo10)
+      
+        usuarioEnsayo10=[]
+
+        part444[index10] = part10
+      
+       
+
+    }
+
+       
+       
 }
+/* for (let index66 = 0; index66 < empresa[index6].usersLength; index66++) {
+    if ( empresa[id6].users[id66] !== empresa[id6].users[index66]) {
+        usuarioEnsayo6[cont] = createUser(empresa[index6].users[index66],id6)
+        cont = cont + 1
+     }
 
-
+}
+part6 = NuevaCompañia4(empresa[index6], usuarioEnsayo6)
+usuarioEnsayo6=[]
+part66[index6] = part6 */
 
 
 console.log("---- SOLUTION EXAMPLE 7 part 1 --- ", resPrimera);
@@ -424,7 +469,7 @@ console.log("---- SOLUTION EXAMPLE 7 part 7 --- ", part66);
 
 console.log("---- SOLUTION EXAMPLE 7 part 8 --- ", part66);
 
-console.log("---- SOLUTION EXAMPLE 7 part 9 --- ", part9);
+console.log("---- SOLUTION EXAMPLE 7 part 9 --- ", part444);
 // -----------------------------------------------------------------------------
 // INSTRUCCIONES EN ESPAÑOL
 
