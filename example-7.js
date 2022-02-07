@@ -22,7 +22,7 @@ let part10 = []
 let part99 = []
 let usuarioEnsayo9 = []
 let usuarioEnsayo10 = []
-
+let userCambio=[]
 
 
 
@@ -391,6 +391,9 @@ function eliminarAgregarUsuarioCompañia9(id9,id99,idcom99) {
             if ( empresa[id9].users[id99] !== empresa[index9].users[index99]) {
                 usuarioEnsayo9[cont] = createUser(empresa[index9].users[index99],0)
                 cont = cont + 1
+             }else{
+                
+                 userCambio=empresa[index9].users[index99]
              }
   
             
@@ -422,7 +425,7 @@ function eliminarAgregarUsuarioCompañia9(id9,id99,idcom99) {
              usuarioEnsayo10[index444] = createUser( part99[index10].users[index444],0)
 
              if (  part99[index10].id===idcom99&& index444== part99[index10].usersLength-1) {
-                usuarioEnsayo10[ part99[idcom99].usersLength]= agregarUsuario( part99[id9].usersLength)
+                usuarioEnsayo10[ part99[idcom99].usersLength]= userCambio
                 
              }
         }
